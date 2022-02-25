@@ -1,7 +1,7 @@
 ## Using SQL to sort and aggregate data 
 
 
-The data set contained the number of a varity of crimes that occurred in specific Toronto Wards. I had data from 2014 to 2020. I knew I wanted to eventually total all the crimes together and sort by ward. Here is a screen shot of what the raw data looked like. 
+The data set contained the number of a varity of crimes that occurred in specific Toronto Wards. I had data from 2014 to 2020. I knew I wanted to eventually total all the crimes together and sort by ward. Here is a screen shot of what a section of the raw data looked like. 
 
 
 <img width="1457" alt="Screen Shot 2022-02-24 at 8 25 18 PM" src="https://user-images.githubusercontent.com/59493321/155636008-92d07a28-b0b3-465d-af0e-3cbf17def963.png">
