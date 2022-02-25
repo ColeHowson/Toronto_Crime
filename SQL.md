@@ -1,5 +1,12 @@
-The data set contained the number of a varity of crimes that occurred in specific Toronto Wards. I had data from 2014 to 2020. I knew I wanted to eventually total all the crimes together and sort by ward. This started with the following query. 
+## Using SQL to sort and aggregate data 
 
+
+The data set contained the number of a varity of crimes that occurred in specific Toronto Wards. I had data from 2014 to 2020. I knew I wanted to eventually total all the crimes together and sort by ward. Here is a screen shot of what the raw data looked like. 
+
+
+<img width="1457" alt="Screen Shot 2022-02-24 at 8 25 18 PM" src="https://user-images.githubusercontent.com/59493321/155636008-92d07a28-b0b3-465d-af0e-3cbf17def963.png">
+
+I wanted to get the total crimes commited for each Ward. I used the query below to total all the assualts commited and then grouped by city ward
 
 ```SQL
 
@@ -17,9 +24,23 @@ GROUP BY 1,2
 ORDER BY 3 DESC 
 
 ```
+This resulted in the following table: 
+
+<img width="1278" alt="Screen Shot 2022-02-24 at 8 29 00 PM" src="https://user-images.githubusercontent.com/59493321/155636357-7d444073-e5b1-4054-b324-f7ada61cc043.png">
+
+Now I was able to see the total number of assualts per ward as well as what percentage those wards assaults made up the total of all assualts in Toronto.
+
+I followed a similar process to get the totals for all the different crimes. Once I had the totals for all crimes, I added a new table which contained the growth percentages for each crime type by neighbourhood. This was done in EXCEL then imported into Google BigQuery. Here is a snapshot of that table:
+
+<img width="775" alt="Screen Shot 2022-02-24 at 8 32 22 PM" src="https://user-images.githubusercontent.com/59493321/155636683-f2cd9213-adc9-4dd3-b08c-39f8f1dacf36.png">
 
 
-I followed a similar process to get the totals for all the different crimes. Once I had the totals for all crimes, I added a new table which contained the growth percentages for each crime type by neighbourhood. This was done in EXCEL then imported into Google BigQuery. Combining this table with all the others, I made one finally query to create a table that I could then pull into Tableau. 
+
+
+
+
+
+I combined this table with all the others,and made one finally query to create a table that I could then pull into Tableau. 
 
 ``` SQL
 WITH -- Using With Clauses, I made each of the crime queries into their own tables that I would be able to join together at the end
@@ -221,4 +242,7 @@ ORDER BY
   9 DESC
 ```
 
+This resulted in the following table that I then used to create a dashboard in Tableau: 
+
+<img width="1338" alt="Screen Shot 2022-02-24 at 8 36 40 PM" src="https://user-images.githubusercontent.com/59493321/155637017-7c858bf9-3f40-4795-9dc2-d10cfa9c8d65.png">
 
