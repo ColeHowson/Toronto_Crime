@@ -1,6 +1,8 @@
 The data set contained the number of a varity of crimes that occurred in specific Toronto Wards. I had data from 2014 to 2020. I knew I wanted to eventually total all the crimes together and sort by ward. This started with the following query. 
 
 
+```SQL
+
 SELECT -- The outer query pulls the total assualts for each neighbourhood as well as calculates the percentage of assualts that occur in each ward. 
     Neighbourhood,
     Total_Assaults,
@@ -12,11 +14,14 @@ FROM
     FROM `sql-project-341315.toronto_crime.crime_2016`
     GROUP BY 1) -- This Groups the results by Neighbourhood
 GROUP BY 1,2
-ORDER BY 3 DESC
+ORDER BY 3 DESC 
+
+```
 
 
 I followed a similar process to get the totals for all the different crimes. Once I had the totals for all crimes, I added a new table which contained the growth percentages for each crime type by neighbourhood. This was done in EXCEL then imported into Google BigQuery. Combining this table with all the others, I made one finally query to create a table that I could then pull into Tableau. 
 
+``` SQL
 WITH -- Using With Clauses, I made each of the crime queries into their own tables that I would be able to join together at the end
   Assault_Table AS (
   SELECT
@@ -214,5 +219,6 @@ GROUP BY
   23
 ORDER BY
   9 DESC
+```
 
 
